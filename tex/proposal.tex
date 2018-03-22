@@ -78,6 +78,9 @@ Our team is made of 3 people. Yiyang Li, Chenqin Xu and Danning Zheng.
 
 \section{2. Preliminaries}
 
+Text detection was formerly solved using traditional processing methods, like MSER\footnote{Matas J, Chum O, Urban M, et al. Robust wide-baseline stereo from maximally stable extremal regions[J]. Image and Vision Computing, 2004, 22(10):761-767.} and SWT\footnote{Epshtein B, Ofek E, Wexler Y. Detecting text in natural scenes with stroke width transform[C] Computer Vision and Pattern Recognition. IEEE, 2010:2963-2970.}, which basically focus on the geometric and color features of pictures. They first extract candidate text regions through edge detection or clustering method and then eliminate non-text regions using heuristic rules. In this stage, detection precision was unsatisfactory and the speed was comparatively slow, because of all kinds of text-like structures which were not easy to be distinguished from real text regions by those traditional methods.
+
+With the use of neural network, text detection performances have been greatly improved. R-CNN was applied into text detection in 2014, which firstly gets the candidate regions and then uses cnn to extract features and train classifiers. Later fast R-CNN became popular because of its single-stage training and higher detection quality. In recent years, YOLO\footnote{Redmon J, Divvala S, Girshick R, et al. You Only Look Once: Unified, Real-Time Object Detection[J]. 2015:779-788.} has also become popular. It is a unified and fast framework, although it may struggle with small objects that appear in groups.
 
 \section{3. Project Plan}
 
