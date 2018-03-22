@@ -1,0 +1,112 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{pythonhighlight}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdftitle={COMS 4995-6 Final Project Proposal},
+            pdfauthor={Yiyang Li/Chenqin Xu/Danning Zheng},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\title{COMS 4995-6 Final Project Proposal}
+\author{Yiyang Li/Chenqin Xu/Danning Zheng}
+\date{2018-03-22}
+
+\begin{document}
+\maketitle
+
+\newcommand\E{\mathbb{E}}
+\renewcommand\P{\mathbb{P}}
+\newcommand\R{\mathbb{R}}
+\newcommand\Var{\operatorname{Var}}
+
+\section{1. Overview}
+
+Our project will be using deep learning to do text detecting in natural images. After implemented and trained the network, we may consider further application upon that network.
+
+Our team is made of 3 people. Yiyang Li, Chenqin Xu and Danning Zheng.
+
+\section{2. Preliminaries}
+
+
+\section{3. Project Plan}
+
+Currently, our goal can be separated into 3 stages:
+
+\subsection{3.1 Preparing}
+
+There're many works have been done on this area. According to a survey at 2015\footnote{http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6945320}, the complexity come from environment and text itself makes this a very tough mission.
+
+However, in recent years, there're several amazing work using different deep learning methods have been deployed to this area and have achieved excellent result.
+
+We are considering implement our neural network based on one of former works that published on ECCV 2016 by Zhi Tian and Weilin Huang\footnote{https://arxiv.org/pdf/1609.03605.pdf}. We will first re-implement their work since they have described their structure in detail witin their paper. 
+
+
+\subsection{3.2 Implementing basic function--Detecting}
+
+As for training data, we are considering to use ICDAR dataset as Tian\&Huang did. And since ICDAR dataset has grown, we can expecting a better result from them, or not. Also as a complementation, we can also use Google API to annotate some picture for our special training demands.
+
+Their structure are based on a combination of VGG network and bi-LSTM, which is kind of fancinating and complicated. 
+
+As for the framework, we are going to use Tensorflow or Caffe, depends on which we found more efficient for our project.
+
+
+
+
+\subsection{3.3 Further Application}
+
+After that we will have to do some fine tuning work or transfer learning in order to fulfill our own goal. But we think it is more important to reach good enough accuracy first. So we will currently focusing on that.
+
+There can be a lot of application based on a text detecting network. Like transform pictures of notes on the blackboard into some editable pdf files. Or extract text information from wild images. All these thought will depends on how the network can work.
+
+\end{document}
